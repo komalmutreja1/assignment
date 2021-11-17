@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "19e1c25c-a989-48e8-a852-c233b0e29a5a",
+		"name": "Electronic Store Assignment",
+		"description": "Electronic Store Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"demo\",\n    \"password\": \"demo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/accounts/api/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"api",
+								"login",
+								""
+							]
+						},
+						"description": "Authenticates the user with username and password."
+					},
+					"response": []
+				},
+				{
+					"name": "User Registeration ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 315c4aa466926e243390931a324b3037d9706ff1",
+								"description": "komal",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 083e868097dbd8df972fac49e1311912cc9e1293",
+								"description": "demo",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"demo\",\n    \"password\": \"demo\",\n    \"first_name\": \"Mr.\",\n    \"last_name\": \"Demo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/accounts/api/register/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"api",
+								"register",
+								""
+							]
+						},
+						"description": "Creates an user with provided details."
+					},
+					"response": []
+				}
+			],
+			"description": "Contains APIs related to User Accounts and Authentication."
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Product Creation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token b1984427ddfa10d95e37b4a8ff9a90a84f4414fe",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"SamSung\",\n    \"description\": \"this is the mobile\",\n    \"processor\": \"mediatek\",\n    \"type\": \"Mobile\",\n    \"ram\": \"8 GB\",\n    \"screen_size\": \"5.6\",\n    \"color\": \"blue\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/products/api/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"api",
+								"product",
+								""
+							]
+						},
+						"description": "Creates a new Product."
+					},
+					"response": []
+				},
+				{
+					"name": "Product Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token b1984427ddfa10d95e37b4a8ff9a90a84f4414fe",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 7,\n    \"name\": \"SamSung Galaxy Note\",\n    \"description\": \"this is the mobile\",\n    \"processor\": \"mediatek\",\n    \"type\": \"Mobile\",\n    \"ram\": \"8 GB\",\n    \"screen_size\": \"5.6\",\n    \"color\": \"blue\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/products/api/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"api",
+								"product",
+								""
+							]
+						},
+						"description": "Updates an existing Product."
+					},
+					"response": []
+				},
+				{
+					"name": "Product Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token b1984427ddfa10d95e37b4a8ff9a90a84f4414fe",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/products/api/product/?id=6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"api",
+								"product",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						},
+						"description": "Deletes an existing Product."
+					},
+					"response": []
+				},
+				{
+					"name": "Product Fetch",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token b1984427ddfa10d95e37b4a8ff9a90a84f4414fe",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/products/api/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"api",
+								"product",
+								""
+							]
+						},
+						"description": "Fetches Products from the database."
+					},
+					"response": []
+				}
+			],
+			"description": "Contains APIs for our Electronic Store Products."
+		}
+	]
+}
