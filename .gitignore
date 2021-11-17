@@ -111,7 +111,7 @@ venv/
 
 # Only for Development only
 # **/migrations/**
-migrations
+# migrations
 files
 static
 serve
